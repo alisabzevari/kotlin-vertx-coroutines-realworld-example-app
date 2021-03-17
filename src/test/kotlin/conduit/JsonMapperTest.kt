@@ -7,10 +7,9 @@ import io.kotest.core.spec.style.StringSpec
 import io.kotest.core.test.TestCase
 import io.kotest.matchers.shouldBe
 import org.intellij.lang.annotations.Language
-import java.time.OffsetDateTime
 
 class JsonMapperTest : StringSpec() {
-    val time = OffsetDateTime.now()
+    val time = "2021-03-17T21:36:11.888Z".toOffsetDateTime()
 
     override fun beforeEach(testCase: TestCase) {
         configureJson()
@@ -26,8 +25,8 @@ class JsonMapperTest : StringSpec() {
                   "description": "article description",
                   "body": "article body",
                   "tagList": ["tag-1", "tag-2"],
-                  "createdAt": "${time.iso}",
-                  "updatedAt": "${time.iso}",
+                  "createdAt": "${time.isoFormat}",
+                  "updatedAt": "${time.isoFormat}",
                   "favorited": false,
                   "favoritesCount": 0,
                   "author": {
