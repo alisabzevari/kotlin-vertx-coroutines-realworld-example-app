@@ -8,6 +8,6 @@ import java.time.format.DateTimeFormatter
 val OffsetDateTime.isoFormat: String
     get() = DateTimeFormatter.ISO_INSTANT.format(this)
 
-fun OffsetDateTime.toUtc() = this.withOffsetSameInstant(ZoneOffset.UTC)
+fun OffsetDateTime.toUtc(): OffsetDateTime = this.withOffsetSameInstant(ZoneOffset.UTC)
 
-fun String.toOffsetDateTime() = Instant.parse(this).atOffset(ZoneOffset.UTC)
+fun String.toOffsetDateTime(): OffsetDateTime = Instant.parse(this).atOffset(ZoneOffset.UTC)

@@ -52,7 +52,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("conduit.AppKt")
+    mainClass.set("conduit.MainKt")
 }
 
 tasks.withType<Test> {

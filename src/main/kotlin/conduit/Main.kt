@@ -20,7 +20,13 @@ fun startApp(config: AppConfig) {
     val routes = routes(vertx)
 
     val server = vertx.createHttpServer()
-    server.requestHandler(routes).listen(config.port)
 
-    logger.info("Listening on http://localhost:${config.port}")
+    server.requestHandler(routes).listen(config.port) {
+        if (it.succeeded()) {
+            logger.info("Listening on http://localhost:${config.port}")
+        } else {
+            logger.error("Exception thrown creating http server", it.cause())
+        }
+    }
+
 }
