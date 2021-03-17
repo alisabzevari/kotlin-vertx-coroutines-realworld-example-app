@@ -1,0 +1,14 @@
+Configuration:
+  thresholdFilter:
+    level: debug
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "[%date{yyyy-MM-dd HH:mm:ssXXX, UTC}] [%level] [%thread] - %m%n"
+
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        ref: STDOUT
