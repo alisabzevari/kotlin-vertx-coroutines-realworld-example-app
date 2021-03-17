@@ -1,6 +1,7 @@
 val log4jVersion = "2.12.1"
 val jacksonVersion = "2.10.0"
 val kotestVersion = "4.4.3"
+val vertxVersion = "4.0.3"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
@@ -22,6 +23,10 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+    implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
+    implementation("io.vertx:vertx-web")
+    implementation("io.vertx:vertx-pg-client")
+    implementation("io.vertx:vertx-lang-kotlin")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
     implementation("com.h2database:h2:1.4.198")
     implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
